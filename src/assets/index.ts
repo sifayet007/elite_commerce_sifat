@@ -10,6 +10,18 @@ import topFeatureImg4 from "@/assets/Frame (4).png";
 import topFeatureImg5 from "@/assets/Vector.png";
 import topFeatureImg6 from "@/assets/Frame.png";
 import OurFeatureCircleImg from "@/assets/frame5220.png";
+import customerPanelImg1 from "@/assets/Frame 1321318910.png";
+import customerPanelImg3 from "@/assets/Frame 1321318913.png";
+import customerPanelImg4 from "@/assets/Frame 1321318914.png";
+import customerPanelImg5 from "@/assets/Frame 1321318915 (1).png";
+import customerPanelImg6 from "@/assets/Frame 1321318915 (2).png";
+import customerPanelImg7 from "@/assets/Frame 1321318915.png";
+import customerPanelImg8 from "@/assets/Frame 1321318916.png";
+import customerPanelImg9 from "@/assets/Frame 1321318916 (1).png";
+import customerPanelImg10 from "@/assets/Frame 1321318916 (2).png";
+import customerPanelImg11 from "@/assets/Frame 1321318917.png";
+import customerPanelImg12 from "@/assets/Frame 1321319311 1.png";
+
 export const assets = {
   eliteCommerece,
   premiumCardImg1,
@@ -23,4 +35,15 @@ export const assets = {
   topFeatureImg5,
   topFeatureImg6,
   OurFeatureCircleImg,
+  customerPanelImg1,
+  customerPanelImg3,
+  customerPanelImg4,
+  customerPanelImg5,
+  customerPanelImg6,
+  customerPanelImg7,
+  customerPanelImg8,
+  customerPanelImg9,
+  customerPanelImg10,
+  customerPanelImg11,
+  customerPanelImg12,
 };

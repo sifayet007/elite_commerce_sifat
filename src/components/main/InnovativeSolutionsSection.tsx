@@ -4,11 +4,12 @@ import VideoPlayer from "../ui/VideoPlayer";
 
 const InnovativeSolutionsSection = () => {
   return (
-    <div className="text-center  p-5 ">
+    <div className="text-center  p-5 uppercase">
       <h1 className="text-[clamp(20px,5vw,50px)] font-bold">
-        Innovative Solutions for Your <br /> E-Commerce <span>Success.</span>
+        Innovative Solutions for Your <br /> E-Commerce{" "}
+        <span className="text-green-600">Success.</span>
       </h1>
-      <p className="text-[clamp(12px,5vw,18px)] text-gray-500 mt-4 font-semibold">
+      <p className="text-[clamp(12px,5vw,18px)] text-gray-500 mt-4 font-semibold capitalize">
         the best <span className="text-orange-500"> e-Commerce</span>{" "}
         marketplace solution, You Can operate and{" "}
         <span className="text-green-500">control</span>
