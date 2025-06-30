@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { PiStarFourFill } from "react-icons/pi";
 import Button from "../ui/Button";
-import TextCircelAndSpin from "../ui/TextCircelAndSpin";
+import TextCircleAndSpin from "../ui/TextCircelAndSpin";
 
 const PremiumFeaturesSection = () => {
   return (
@@ -40,7 +40,17 @@ const PremiumFeaturesSection = () => {
               Our High-Quality Dmos
             </p>
           </div>
-          <TextCircelAndSpin />
+          <TextCircleAndSpin
+            text="Elite Commerce - expert squad"
+            logoSrc={assets.expertSquteLogo.src}
+            fromColor="#FF9153"
+            toColor="#FF1810"
+            spinDuration="15s"
+            size="clamp(120px,12vw,180px)"
+            padding="clamp(5px,1.5vw,10px)"
+            textSize="clamp(8px,2.5vw,12px)"
+            letterSpacing="2px"
+          />
         </div>
         <div className="outline-2 outline-[#E6E6E6] p-5 rounded-md flex-1/2">
           <div className="flex gap-2">

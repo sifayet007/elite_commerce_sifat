@@ -1,9 +1,11 @@
 import FeatureOfElideCommerce from "@/components/main/FeatureOfElideCommerce";
+import Footer from "@/components/main/Footer";
 import InnovativeSolutionsSection from "@/components/main/InnovativeSolutionsSection";
 import Marquee from "@/components/main/Marquee";
 import OurFeature from "@/components/main/OurFeature";
 import PremiumFeaturesSection from "@/components/main/PremiumFeaturesSection";
 import Pricing from "@/components/main/Pricing";
+import TechnologyGetaway from "@/components/main/TechnologyGetaway";
 import TestimonialSlider from "@/components/main/TestimonialSlider";
 import TopFeature from "@/components/main/TopFeature";
 // import LightGreenShadow from "@/components/ui/LightGreenShadow";
@@ -24,6 +26,10 @@ export default function Home() {
       <Marquee />
       <div className="max-w-7xl w-full mx-auto  px-[clamp(20px,2.5vw,40px)]">
         <Pricing />
+        <TechnologyGetaway />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import eliteCommerece from "@/assets/mainLogo.png";
+import eliteCommerece from "@/assets/eliteCommercGreenLogo.png";
 import premiumCardImg1 from "@/assets/image 472.png";
 import premiumCardImg2 from "@/assets/Frame 1321319311 1.png";
 import circalImage from "@/assets/Frame 1000014678.png";
@@ -21,7 +21,19 @@ import customerPanelImg9 from "@/assets/Frame 1321318916 (1).png";
 import customerPanelImg10 from "@/assets/Frame 1321318916 (2).png";
 import customerPanelImg11 from "@/assets/Frame 1321318917.png";
 import customerPanelImg12 from "@/assets/Frame 1321319311 1.png";
-
+import footerLogoImg from "@/assets/mainLogo.png";
+import footerLogoImg2 from "@/assets/footerImage2.png";
+import eliteCommerceLogo from "@/assets/eliteCommerce.png";
+import footerBackgroundImg from "@/assets/FooterBackgrounImg.png";
+import spineLogo3 from "@/assets/Frame 1000014679 (1).png";
+import footerSpineLogo from "@/assets/footerImage2.png";
+import mongoDB from "@/assets/image 1200.png";
+import reactImg from "@/assets/image 947.png";
+import nodeExpresJs from "@/assets/image 1201.png";
+import postgress from "@/assets/image 1202.png";
+import reduxImg from "@/assets/image 952.png";
+import javaScriptImg from "@/assets/image 951.png";
+import php from "@/assets/php.png";
 export const assets = {
   eliteCommerece,
   premiumCardImg1,
@@ -46,4 +58,17 @@ export const assets = {
   customerPanelImg10,
   customerPanelImg11,
   customerPanelImg12,
+  footerLogoImg,
+  footerLogoImg2,
+  eliteCommerceLogo,
+  footerBackgroundImg,
+  spineLogo3,
+  footerSpineLogo,
+  mongoDB,
+  reactImg,
+  nodeExpresJs,
+  postgress,
+  reduxImg,
+  javaScriptImg,
+  php,
 };

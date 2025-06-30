@@ -1,5 +1,6 @@
 import React from "react";
-import TextCircelAndSpin from "../ui/TextCircelAndSpin";
+import TextCircleAndSpin from "../ui/TextCircelAndSpin";
+import { assets } from "@/assets";
 
 const OurFeature = () => {
   return (
@@ -18,7 +19,18 @@ const OurFeature = () => {
         </p>
 
         <div className="absolute bottom-0 right-1/2 translate-x-1/2 translate-y-1/2">
-          <TextCircelAndSpin />
+          <TextCircleAndSpin
+            text="Elite Commerce - expert squad"
+            logoSrc={assets.spineLogo3.src}
+            fromColor="#4ADE80"
+            toColor="#16A34A"
+            spinDuration="15s"
+            size="clamp(60px,12vw,110px)"
+            padding="clamp(5px,1.5vw,10px)"
+            paddingLogo="clamp(5px,1.5vw,10px)"
+            textSize="clamp(5px,2.5vw,12px)"
+            letterSpacing="2px"
+          />
         </div>
       </div>
     </div>

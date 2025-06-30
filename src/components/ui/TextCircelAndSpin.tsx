@@ -1,13 +1,45 @@
-import { assets } from "@/assets";
 import Image from "next/image";
 import React from "react";
 
-const TextCircelAndSpin = () => {
-  return (
-    // components/CircularTextSVG.tsx
+type TextCircleAndSpinProps = {
+  text: string;
+  logoSrc: string;
+  fromColor?: string;
+  toColor?: string;
+  spinDuration?: string; // e.g., "20s", "10s"
+  size?: string; // e.g., "clamp(100px,10vw,160px)"
+  padding?: string; // e.g., "10px"
+  anmationLogo?: string;
+  textSize?: string;
+  paddingLogo?: string;
+  letterSpacing?: string; // e.g., ""
+};
 
+const TextCircleAndSpin = ({
+  text,
+  logoSrc,
+  fromColor,
+  toColor,
+
+  spinDuration = "20s",
+  size = "clamp(100px,10vw,160px)",
+  padding = "clamp(10px,2.5vw,20px)",
+  textSize,
+  paddingLogo,
+  letterSpacing,
+}: TextCircleAndSpinProps) => {
+  return (
     <div className="relative">
-      <div className=" h-[clamp(100px,10vw,160px)] w-[clamp(100px,10vw,160px)]  [animation:spin_20s_linear_infinite] bg-gradient-to-l from-[#FF9153] to-[#FF1810] rounded-full p-3  mx-auto">
+      <div
+        className={`rounded-full   mx-auto`}
+        style={{
+          height: size,
+          width: size,
+          background: `linear-gradient(to left, ${fromColor}, ${toColor})`,
+          animation: `spin ${spinDuration} linear infinite`,
+          padding: `${padding}`,
+        }}
+      >
         <svg viewBox="0 0 100 100" className="w-full h-full">
           <defs>
             <path
@@ -17,20 +49,29 @@ const TextCircelAndSpin = () => {
           </defs>
           <text
             fill="white"
-            className="text-[clamp(12px,2.5vw,13px)]  uppercase"
+            className="tracking-widest uppercase"
             fontWeight="semibold"
+            fontSize={textSize}
+            style={{
+              letterSpacing: `${letterSpacing}`,
+            }}
           >
             <textPath href="#circlePath" startOffset="0%">
-              Elite Commerce - expert squate
+              {text}
             </textPath>
           </text>
         </svg>
       </div>
-      <div className="absolute  transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 ">
-        <Image src={assets.expertSquteLogo} alt="expertSquteLogo" />
+      <div
+        className={`absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 `}
+        style={{
+          padding: paddingLogo,
+        }}
+      >
+        <Image src={logoSrc} alt="Center Logo" width={50} height={50} />
       </div>
     </div>
   );
 };
 
-export default TextCircelAndSpin;
+export default TextCircleAndSpin;
