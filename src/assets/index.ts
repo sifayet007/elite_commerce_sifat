@@ -34,6 +34,25 @@ import postgress from "@/assets/image 1202.png";
 import reduxImg from "@/assets/image 952.png";
 import javaScriptImg from "@/assets/image 951.png";
 import php from "@/assets/php.png";
+import bekash from "@/assets/bekash.png";
+import razopay from "@/assets/razopay.png";
+import paypal from "@/assets/paypal.png";
+import paytm from "@/assets/paytm.png";
+import stripe from "@/assets/image 957.png";
+import sslcommerz from "@/assets/6amMart-SSL-commerz-logo 1.png";
+import SCO from "@/assets/image 944.png";
+import posOrder from "@/assets/posOrder.webp";
+import productView from "@/assets/productView.webp";
+import quickOrder from "@/assets/quickOrder.webp";
+import dashboard from "@/assets/dashboard.webp";
+import homePage from "@/assets/homepage.webp";
+import mobile1 from "@/assets/mobile2.png";
+import mobile2 from "@/assets/mobile2.png";
+import mobile3 from "@/assets/mobile3.png";
+import mobile4 from "@/assets/mobile4.png";
+import mobile5 from "@/assets/mobile5.png";
+import coin from "@/assets/coian.png";
+
 export const assets = {
   eliteCommerece,
   premiumCardImg1,
@@ -71,4 +90,22 @@ export const assets = {
   reduxImg,
   javaScriptImg,
   php,
+  bekash,
+  razopay,
+  paypal,
+  paytm,
+  stripe,
+  sslcommerz,
+  SCO,
+  posOrder,
+  productView,
+  quickOrder,
+  dashboard,
+  homePage,
+  mobile1,
+  mobile2,
+  mobile3,
+  mobile4,
+  mobile5,
+  coin,
 };

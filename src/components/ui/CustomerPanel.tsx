@@ -19,7 +19,7 @@ const CustomerPanel = () => {
       <div className=" flex flex-col md:flex-row gap-y-5 md:gap-x-5">
         {/* Left Button List */}
         <div className="md:bg-gradient-to-tl from-[#0CE47F]/10 md:block to-[#01904D]/10 rounded-xl md:flex-1 w-full">
-          <h1 className="bg-clip-text text-transparent bg-gradient-to-tl from-[#0CE47F] to-[#01904D] pl-4 pt-4 text-lg md:text-xl md:text-left text-center">
+          <h1 className="bg-clip-text text-transparent bg-gradient-to-tl font-semibold from-[#0CE47F] to-[#01904D] md:pl-4 md:mb-0 mb-3 md:pt-4 text-lg md:text-xl md:text-left text-center">
             All Feature
           </h1>
           <div className=" md:p-8 space-y-3.5 flex md:flex-col flex-row overflow-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:space-x-0 space-x-3.5">

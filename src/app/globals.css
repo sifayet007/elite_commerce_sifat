@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.helo {
+  scrollbar-arrow-color: aqua;
+  scroll-behavior: smooth;
+}
