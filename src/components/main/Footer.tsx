@@ -64,6 +64,7 @@ const Footer = () => {
               padding="clamp(5px,1.5vw,10px)"
               logoSrc={assets.footerSpineLogo.src}
               textSize="clamp(12px,2.5vw,12px)"
+              fontColor="#FFFFFF"
             />
             <h1 className="text-white font-semibold text-[clamp(16px,2.5vw,24px)] whitespace-nowrap flex justify-center  md:justify-start">
               Elite-Commerce

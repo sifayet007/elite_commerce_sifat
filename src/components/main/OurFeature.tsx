@@ -30,6 +30,7 @@ const OurFeature = () => {
             paddingLogo="clamp(5px,1.5vw,10px)"
             textSize="clamp(5px,2.5vw,12px)"
             letterSpacing="2px"
+            fontColor="#ffffff"
           />
         </div>
       </div>

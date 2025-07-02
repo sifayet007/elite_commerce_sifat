@@ -9,6 +9,7 @@ import OurFeature from "@/components/main/OurFeature";
 import PremiumFeaturesSection from "@/components/main/PremiumFeaturesSection";
 import Pricing from "@/components/main/Pricing";
 import SCOSection from "@/components/main/SCOSection";
+import Screenshot from "@/components/main/Screenshot";
 import TechnologyGetaway from "@/components/main/TechnologyGetaway";
 import TestimonialSlider from "@/components/main/TestimonialSlider";
 import TopFeature from "@/components/main/TopFeature";
@@ -35,10 +36,12 @@ export default function Home() {
         <div className="hidden lg:block">
           <SCOSection />
         </div>
+        <TestimonialSlider />
         <MobileExperience />
         <GetHelp />
       </div>
       <div>
+        <Screenshot />
         <Footer />
       </div>
     </div>

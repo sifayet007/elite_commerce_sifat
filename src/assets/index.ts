@@ -52,6 +52,27 @@ import mobile3 from "@/assets/mobile3.png";
 import mobile4 from "@/assets/mobile4.png";
 import mobile5 from "@/assets/mobile5.png";
 import coin from "@/assets/coian.png";
+import love from "@/assets/love.png";
+import emoji2 from "@/assets/imoji2.png";
+import Screenshot1 from "@/assets/Frame 1321318910.png";
+import screenshot2 from "@/assets/Frame 1321318912.png";
+import screenshot3 from "@/assets/Frame 1321318913.png";
+import screenshot4 from "@/assets/Frame 1321318914.png";
+import screenshot5 from "@/assets/Frame 1321318915 (1).png";
+import screenshot6 from "@/assets/Frame 1321318915 (2).png";
+import screenshot7 from "@/assets/Frame 1321318915.png";
+import screenshot8 from "@/assets/Frame 1321318916.png";
+import screenshot9 from "@/assets/Frame 1321318916 (1).png";
+import screenshot10 from "@/assets/Frame 1321318916 (2).png";
+import screenshot11 from "@/assets/Frame 1321318917.png";
+import orangColorLogo from "@/assets/orangeColorLogo.png";
+import spiderMan from "@/assets/spider man.jpg";
+import spiderman from "@/assets/spiderMan.jpg";
+import superMan from "@/assets/superman.jpg";
+import elips from "@/assets/Ellipse 2340.png";
+import thor from "@/assets/1128_01_2610.webp";
+import ironMan from "@/assets/ironMan.jpg";
+import blackPanther from "@/assets/pexels-photo-3764545.webp";
 
 export const assets = {
   eliteCommerece,
@@ -108,4 +129,25 @@ export const assets = {
   mobile4,
   mobile5,
   coin,
+  emoji2,
+  love,
+  Screenshot1,
+  screenshot2,
+  screenshot3,
+  screenshot4,
+  screenshot5,
+  screenshot6,
+  screenshot7,
+  screenshot8,
+  screenshot9,
+  screenshot10,
+  screenshot11,
+  orangColorLogo,
+  spiderMan,
+  spiderman,
+  superMan,
+  elips,
+  thor,
+  ironMan,
+  blackPanther,
 };

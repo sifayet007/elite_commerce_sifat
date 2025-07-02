@@ -50,6 +50,7 @@ const PremiumFeaturesSection = () => {
             padding="clamp(5px,1.5vw,10px)"
             textSize="clamp(8px,2.5vw,12px)"
             letterSpacing="2px"
+            fontColor="#ffffff"
           />
         </div>
         <div className="outline-2 outline-[#E6E6E6] p-5 rounded-md flex-1/2">

@@ -20,7 +20,7 @@ const MobileExperience = () => {
               alt={item.title}
               className="min-w-[190px]"
             />
-            <h1 className="text-sm md:text-lg text-center mt-2.5 md:mt-3">
+            <h1 className="text-[clamp(14px,2.5vw,18px)] font-semibold text-center mt-2.5 md:mt-3">
               {item.title}
             </h1>
           </div>

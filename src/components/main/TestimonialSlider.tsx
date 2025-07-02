@@ -1,74 +1,146 @@
 "use client";
-import { useState, useEffect } from "react";
+import testimonials from "@/constants/testimonials";
 import Image from "next/image";
-import testimonials from "@/constants/slider";
+import React, { useEffect, useState } from "react";
+import Button from "../ui/Button";
+import { FaLocationPin, FaStar } from "react-icons/fa6";
 
-export default function TestimonialSlider() {
-  const [activeIndex, setActiveIndex] = useState(0);
+const TestimonialSlider = () => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
+  const total = testimonials.length;
 
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 4000);
+    if (testimonials.length === 0) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
+
+  const getVisibleAvatars = () => {
+    const visibleCount = isLargeScreen ? 9 : 7;
+    const half = Math.floor(visibleCount / 2);
+    const visible = [];
+
+    for (let i = -half; i <= half; i++) {
+      const index = (activeIndex + i + total) % total;
+      visible.push({ ...testimonials[index], relativeIndex: i });
+    }
+
+    return visible;
+  };
+
+  const visibleAvatars = getVisibleAvatars();
 
   return (
-    <div className="flex flex-col items-center py-10">
-      {/* Avatars */}
-      <div className="relative flex items-center justify-center h-24">
-        {testimonials.map((item, index) => {
-          const position = index - activeIndex;
+    <div className="w-full px-2 overflow-hidden">
+      {/* Avatar Slider Row (Responsive + Scrollable) */}
+      <div className="flex items-center gap-2 sm:gap-4 py-6 overflow-x-auto scrollbar-none">
+        <div className="flex items-center gap-2 sm:gap-4 mx-auto px-2 min-w-fit">
+          {visibleAvatars.map((item, i) => {
+            const distance = Math.abs(item.relativeIndex);
 
-          let translate = "translate-x-0";
-          let zIndex = "z-0";
-          let opacity = "opacity-40";
-          let scale = "scale-90";
+            let sizeClass = "";
+            let opacity = "opacity-30";
+            let border = "";
 
-          if (position === 0) {
-            translate = "translate-x-0";
-            zIndex = "z-10";
-            opacity = "opacity-100";
-            scale = "scale-110";
-          } else if (
-            position === -1 ||
-            (activeIndex === 0 && index === testimonials.length - 1)
-          ) {
-            translate = "-translate-x-16";
-          } else if (
-            position === 1 ||
-            (activeIndex === testimonials.length - 1 && index === 0)
-          ) {
-            translate = "translate-x-16";
-          }
+            if (distance === 0) {
+              sizeClass =
+                "w-[clamp(56px,16vw,135px)] h-[clamp(56px,16vw,135px)]";
+              opacity = "opacity-100";
+              border = "border-4 border-red-500";
+            } else if (distance === 1) {
+              sizeClass =
+                "w-[clamp(48px,13vw,114px)] h-[clamp(48px,13vw,114px)]";
+              opacity = "opacity-80";
+            } else if (distance === 2) {
+              sizeClass = "w-[clamp(40px,10vw,94px)] h-[clamp(40px,10vw,94px)]";
+              opacity = "opacity-60";
+            } else if (distance === 3) {
+              sizeClass = "w-[clamp(32px,8vw,74px)] h-[clamp(32px,8vw,74px)]";
+              opacity = "opacity-40";
+            } else if (distance === 4) {
+              sizeClass = "w-[clamp(24px,6vw,54px)] h-[clamp(24px,6vw,54px)]";
+              opacity = "opacity-20";
+            }
 
-          return (
-            <Image
-              key={index}
-              src={item.image}
-              alt={item.name}
-              width={50}
-              height={50}
-              className={`rounded-full absolute transition-all duration-500 ease-in-out ${translate} ${opacity} ${scale} ${zIndex}`}
-            />
-          );
-        })}
+            return (
+              <div
+                key={i}
+                className={`rounded-full transition-all duration-300 ${sizeClass} ${opacity} ${border} shrink-0`}
+              >
+                <Image
+                  src={item.avatar}
+                  alt={item.name}
+                  width={135}
+                  height={135}
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="mt-10 text-center max-w-sm">
-        <h3 className="text-lg font-semibold">
-          {testimonials[activeIndex].name}
-        </h3>
-        <p className="text-yellow-500">
-          {"⭐".repeat(testimonials[activeIndex].rating)}
+      {/* Navigation Buttons */}
+      <div className="flex justify-center gap-4 sm:gap-5 mb-4">
+        <Button label="←" onClick={handlePrev} />
+        <Button label="→" onClick={handleNext} />
+      </div>
+
+      {/* Testimonial Content */}
+      <div className="text-center max-w-3xl mx-auto p-4 sm:p-6 bg-white/70 backdrop-blur rounded-xl shadow-md">
+        {/* Rating */}
+        <div className="flex items-center justify-center gap-1 mb-2">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <FaStar
+              key={i}
+              className={`${
+                i < testimonials[activeIndex].rating
+                  ? "text-orange-500"
+                  : "text-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Location */}
+        <p className="flex items-center justify-center gap-2 text-black/70 mb-2 text-sm sm:text-base">
+          <FaLocationPin /> {testimonials[activeIndex].location}
         </p>
-        <p className="text-gray-600 italic mt-2">
-          “{testimonials[activeIndex].comment}”
+
+        <hr className="my-4 border-black/10" />
+
+        {/* Comment */}
+        <p className="text-black/60 mb-2 text-sm sm:text-base">
+          {testimonials[activeIndex].comment}
         </p>
+
+        {/* Name */}
+        <h2 className="font-semibold text-black text-base sm:text-lg">
+          — {testimonials[activeIndex].name}
+        </h2>
       </div>
     </div>
   );
-}
+};
+
+export default TestimonialSlider;

@@ -7,9 +7,12 @@ const DasktopMobileOptimized = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   return (
     <div>
-      <div>
+      <div className="text-center">
         <h1>Desktop Mobile Optimized</h1>
-        <p>Furthermore, The Elite Commerce is Mobile-friendly Design</p>
+        <p className="text-[clamp(20px,2.5vw,40px)] font-bold">
+          Furthermore, The Elite Commerce is <br /> Mobile-friendly{" "}
+          <span className="text-green-500">Design</span>
+        </p>
       </div>
       <div className="flex md:flex-row flex-col gap-y-5 lg:gap-x-5 items-center  md:bg-gradient-to-tl md:from-[#0CE47F]/5 md:to-[#01904D]/5  md:py-10 md:px-7 ">
         <div className="w-full max-h-[504px] overflow-auto flex flex-row md:flex-col p-5 gap-x-4 gap-y-5">

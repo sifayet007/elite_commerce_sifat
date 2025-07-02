@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 type TextCircleAndSpinProps = {
   text: string;
-  logoSrc: string;
+  logoSrc: string | StaticImageData;
   fromColor?: string;
   toColor?: string;
   spinDuration?: string; // e.g., "20s", "10s"
@@ -12,7 +12,8 @@ type TextCircleAndSpinProps = {
   anmationLogo?: string;
   textSize?: string;
   paddingLogo?: string;
-  letterSpacing?: string; // e.g., ""
+  letterSpacing?: string;
+  fontColor?: string; // e.g., ""
 };
 
 const TextCircleAndSpin = ({
@@ -27,11 +28,12 @@ const TextCircleAndSpin = ({
   textSize,
   paddingLogo,
   letterSpacing,
+  fontColor,
 }: TextCircleAndSpinProps) => {
   return (
     <div className="relative">
       <div
-        className={`rounded-full   mx-auto`}
+        className={`rounded-full animate-spin  mx-auto`}
         style={{
           height: size,
           width: size,
@@ -48,13 +50,13 @@ const TextCircleAndSpin = ({
             />
           </defs>
           <text
-            fill="white"
             className="tracking-widest uppercase"
             fontWeight="semibold"
             fontSize={textSize}
             style={{
               letterSpacing: `${letterSpacing}`,
             }}
+            fill={fontColor}
           >
             <textPath href="#circlePath" startOffset="0%">
               {text}

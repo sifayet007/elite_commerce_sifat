@@ -18,7 +18,7 @@ const Navbar = () => {
   // };
   return (
     <nav className=" backdrop-blur-sm z-50 fixed top-0 w-full">
-      <div className="flex  justify-between max-w-7xl w-full mx-auto items-center px-[clamp(20px,vw,40px)] py-4">
+      <div className="flex  justify-between max-w-7xl w-full mx-auto items-center px-[clamp(20px,2.5vw,40px)] py-4">
         <div className="flex items-center gap-x-2">
           <span className="md:hidden block">
             <BiMenu className="size-6" />

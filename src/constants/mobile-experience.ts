@@ -2,23 +2,23 @@ import { assets } from "@/assets";
 
 const mobileExp = [
   {
-    title: "Mobile-Friendly Design",
+    title: "Dashboard Menu",
     image: assets.mobile1,
   },
   {
-    title: "Mobile-Friendly Design",
+    title: "Product View",
     image: assets.mobile2,
   },
   {
-    title: "Mobile-Friendly Design",
+    title: "POS Ordern",
     image: assets.mobile3,
   },
   {
-    title: "Mobile-Friendly Design",
+    title: "Quick Order",
     image: assets.mobile4,
   },
   {
-    title: "Mobile-Friendly Design",
+    title: "Order Tracking",
     image: assets.mobile5,
   },
 ];
