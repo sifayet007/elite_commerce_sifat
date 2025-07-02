@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/main/Navbar";
-import { assets } from "@/assets";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -21,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`relative ${nunito.variable} antialiased bg-white`}>
+      <body className={`relative  ${nunito.variable} antialiased bg-white`}>
         <Navbar />
         {children}
       </body>
