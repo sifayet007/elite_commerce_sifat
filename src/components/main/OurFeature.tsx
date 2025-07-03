@@ -4,7 +4,10 @@ import { assets } from "@/assets";
 
 const OurFeature = () => {
   return (
-    <div className="pt-[clamp(32px,4vw,42px)] pb-[clamp(54px,10vw,123px)] text-center bg-[radial-gradient(#C6F2DC_5px,transparent_0)] [background-size:30px_30px] relative bg-[#D0FFE8] rounded-2xl mt-12">
+    <div className="pt-[clamp(32px,4vw,42px)] pb-[clamp(54px,10vw,123px)] text-center bg-[radial-gradient(#cdf6e1_3px,transparent_0)] [background-size:30px_30px] relative bg-[#D0FFE8]    rounded-2xl mt-12">
+      <div className="absolute  left-0 top-0 w-56 h-56 bg-[#119F5B]/15 rounded-full overflow-hidden blur-2xl z-0"></div>
+      <div className="absolute   bottom-0 right-0 w-56 h-56 bg-[#119F5B]/15 rounded-full overflow-hidden blur-2xl z-0"></div>
+
       <div className="z-30 lg:space-y-8 md:space-y-6 space-y-4">
         <h1 className="text-orange-500 relative z-40 text-[clamp(12px,2.5vw,26px)] fotn-semibold ">
           Our Feature
