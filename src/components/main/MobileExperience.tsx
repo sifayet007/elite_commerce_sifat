@@ -1,13 +1,25 @@
+import { assets } from "@/assets";
 import mobileExp from "@/constants/mobile-experience";
 import Image from "next/image";
 import React from "react";
 
 const MobileExperience = () => {
   return (
-    <div className="md:my-10 my-5">
+    <div className=" my-[clamp(20px,2.5vw,40px)]">
       <div className="text-center ">
-        <h4 className="md:text-base text-xs">Mobile Optimized</h4>
-        <h1 className="text-[clamp(18px,2.5vw,30px)] font-semibold md:my-8 my-5">
+        <h4
+          className=" text-[clamp(10px,2.5vw,16px)] text-center w-[clamp(100px,25vw,200px)] mx-auto py-2 rounded-l-full text-white"
+          style={{
+            backgroundImage: `url(${assets.mobileOptimiziedTextBg.src})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        >
+          Mobile Optimized
+        </h4>
+
+        <h1 className="text-[clamp(18px,2.5vw,30px)] font-semibold my-[clamp(20px,2.5vw,30px)]">
           Elite Commerce Customer Panel & Admin Panel{" "}
           <span className="text-green-500">Responsive</span> Design .
         </h1>

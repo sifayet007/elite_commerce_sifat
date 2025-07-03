@@ -2,13 +2,22 @@ import React from "react";
 import RightToLeft from "../ui/LeftToRight";
 import LeftToRight from "../ui/RightToLeft";
 import GlassSection from "../ui/GlassSection";
+import { assets } from "@/assets";
 
 const Screenshot = () => {
   return (
     <div>
       <div className="bg-[#37393A]">
         <div className="text-center space-y-[clamp(10px,2.5vw,20px)] py-[clamp(20px,2.5vw,30px)]">
-          <h1 className="text-[clamp(12px,2.5vw,16px)] text-white">
+          <h1
+            className="text-[clamp(12px,2.5vw,16px)] text-white"
+            style={{
+              backgroundImage: `url(${assets.screenshoteTextBg})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          >
             Screenshot
           </h1>
           <p className="text-[clamp(18px,2.5vw,40px)] font-bold text-white">

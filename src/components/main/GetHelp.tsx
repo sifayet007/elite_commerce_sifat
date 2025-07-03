@@ -5,7 +5,16 @@ import { assets } from "@/assets";
 
 const GetHelp = () => {
   return (
-    <section className="flex justify-center relative my-20 bg-[/getHelpBg.png]">
+    <section
+      className="flex justify-center relative my-20 .++++++++++++++++++
+      "
+      style={{
+        backgroundImage: `url(${assets.getHelpBg.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="px-10">
         <div className="bg-gradient-to-br from-[#01904D] to-[#0CE47F] rounded-3xl w-fit md:-rotate-[8deg] relative group  ">
           {/* coin image */}
@@ -13,11 +22,11 @@ const GetHelp = () => {
             <Image src={assets.coin} alt="coin" />
           </div>
           {/* love emoji */}
-          <div className="absolute w-[clamp(24px,12vw,60px)] h-[clamp(24px,12vw,60px)] -left-[48px] md:top-20 -top-6  group-hover:translate-y-52    duration-700   ">
+          <div className="absolute w-[clamp(24px,12vw,60px)] h-[clamp(24px,12vw,60px)] -left-[48px] md:top-20 top-20 md:group-hover:translate-y-52 group-hover:translate-y-36    duration-700   ">
             <Image src={assets.love} alt="love emoji" />
           </div>
           {/* bottom emoji */}
-          <div className="absolute  w-[clamp(24px,12vw,60px)] h-[clamp(24px,12vw,60px)]  -right-[48px] md:bottom-14 bottom-20 group-hover:-translate-y-[190px]    duration-500   ">
+          <div className="absolute  w-[clamp(24px,12vw,60px)] h-[clamp(24px,12vw,60px)]  -right-[48px] md:bottom-14 bottom-20 md:group-hover:-translate-y-[210px] group-hover:-translate-y-36    duration-500   ">
             <Image src={assets.emoji2} alt=" emoji" />
           </div>
           {/* bottom coin */}

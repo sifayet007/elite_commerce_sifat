@@ -1,4 +1,5 @@
 "use client";
+import { assets } from "@/assets";
 import desktopMobileData from "@/constants/dasktop-mobile-ptimized";
 import Image from "next/image";
 import React from "react";
@@ -8,7 +9,14 @@ const DasktopMobileOptimized = () => {
   return (
     <div>
       <div className="text-center">
-        <h1>Desktop Mobile Optimized</h1>
+        <h1
+          className="text-[clamp(10px,2.5vw,16px)] text-white bg-no-repeat bg-center bg-cover  w-[250px] md:w-[300px] px-3 md:py-3 py-2  mx-auto  rounded-l-full"
+          style={{
+            backgroundImage: `url(${assets.mobileOptimiziedTextBg.src})`,
+          }}
+        >
+          Desktop Mobile Optimized
+        </h1>
         <p className="text-[clamp(20px,2.5vw,40px)] font-bold">
           Furthermore, The Elite Commerce is <br /> Mobile-friendly{" "}
           <span className="text-green-500">Design</span>

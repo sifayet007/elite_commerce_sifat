@@ -73,6 +73,14 @@ import elips from "@/assets/Ellipse 2340.png";
 import thor from "@/assets/1128_01_2610.webp";
 import ironMan from "@/assets/ironMan.jpg";
 import blackPanther from "@/assets/pexels-photo-3764545.webp";
+import getHelpBg from "@/assets/getHelpBg.png";
+import topFeatureTextBg from "@/assets/topFeaturesTextBg.png";
+import pricingTextBg from "@/assets/pricingTextBg.png";
+import MDtextBg from "@/assets/MobileOptimizedTextBg.png";
+import screenshoteTextBg from "@/assets/screenShoteTextBg.png";
+import technologyTextBg from "@/assets/technologyTextBg.png";
+import testimonialTextBg from "@/assets/testimonialTextBd.png";
+import mobileOptimiziedTextBg from "@/assets/MobileOptimizedTextBg.png";
 
 export const assets = {
   eliteCommerece,
@@ -150,4 +158,12 @@ export const assets = {
   thor,
   ironMan,
   blackPanther,
+  getHelpBg,
+  topFeatureTextBg,
+  pricingTextBg,
+  MDtextBg,
+  screenshoteTextBg,
+  technologyTextBg,
+  testimonialTextBg,
+  mobileOptimiziedTextBg,
 };
