@@ -18,13 +18,10 @@ const Navbar = () => {
         setIsOpen(false);
       }
     };
-
     window.addEventListener("resize", handleResize);
-
-    // Cleanup
     return () => window.removeEventListener("resize", handleResize);
-  }, [isOpen]);
-  window;
+  }, []);
+
   return (
     <nav className=" backdrop-blur-sm z-40 fixed top-0 w-full">
       <div className="flex justify-between max-w-7xl w-full mx-auto items-center px-[clamp(20px,2.5vw,40px)] py-4">
