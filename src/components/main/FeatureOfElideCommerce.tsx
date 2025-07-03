@@ -39,7 +39,7 @@ const FeatureOfElideCommerce = () => {
             ></div>
             <Button
               onClick={() => setActiveIndex("admin-panel")}
-              label="Customer Panel"
+              label="Admin Panel"
               className={`relative z-10 md:px-6 px-3 py-2 whitespace-nowrap md:text-lg text-xs hover:bg-gradient-to-tr hover:text-white text-green-500  hover:shadow-sm hover:shadow-green-500 from-[#01904D] to-[#0CE47F] rounded-[6px] cursor-pointer  shadow-lg ${
                 activeIndex === "admin-panel" &&
                 "text-white bg-gradient-to-tr shadow-sm shadow-green-500 from-[#01904D] to-[#0CE47F]"
