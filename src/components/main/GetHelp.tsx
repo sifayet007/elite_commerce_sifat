@@ -6,8 +6,7 @@ import { assets } from "@/assets";
 const GetHelp = () => {
   return (
     <section
-      className="flex justify-center relative my-20 .++++++++++++++++++
-      "
+      className="flex justify-center relative my-[clamp(100px,10vw,200px)]"
       style={{
         backgroundImage: `url(${assets.getHelpBg.src})`,
         backgroundSize: "cover",

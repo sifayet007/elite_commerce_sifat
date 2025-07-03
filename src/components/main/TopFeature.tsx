@@ -6,7 +6,7 @@ import Button from "../ui/Button";
 
 const TopFeature = () => {
   return (
-    <div className="mt-28">
+    <div className="mt-[clamp(35px,5vw,100px)]">
       <div className="text-center space-y-6">
         <div className="relative inline-block group mt-[30px]">
           <div className="absolute group-hover:translate-y-2 group-hover:-translate-x-2 w-full h-full group-hover:outline-2 group-hover:outline-orange-500 duration-300 rounded-[6px] shadow-md "></div>

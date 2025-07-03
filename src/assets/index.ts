@@ -81,6 +81,7 @@ import screenshoteTextBg from "@/assets/screenShoteTextBg.png";
 import technologyTextBg from "@/assets/technologyTextBg.png";
 import testimonialTextBg from "@/assets/testimonialTextBd.png";
 import mobileOptimiziedTextBg from "@/assets/MobileOptimizedTextBg.png";
+import highlight from "@/assets/Highlight_11.png";
 
 export const assets = {
   eliteCommerece,
@@ -166,4 +167,5 @@ export const assets = {
   technologyTextBg,
   testimonialTextBg,
   mobileOptimiziedTextBg,
+  highlight,
 };

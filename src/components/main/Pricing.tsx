@@ -5,9 +5,9 @@ import { BiSolidPurchaseTag } from "react-icons/bi";
 
 const Pricing = () => {
   return (
-    <div className="my-10 ">
+    <div className=" mt-[clamp(30px,8vw,80px)] ">
       <div className="text-center">
-        <div className="relative inline-block group mt-[30px]">
+        <div className="relative inline-block group">
           <div className="absolute group-hover:translate-y-2 group-hover:-translate-x-2 w-full h-full group-hover:outline-2 group-hover:outline-green-500 duration-300 rounded-[6px] shadow-md "></div>
           <Button
             label="Pricing"
@@ -90,12 +90,14 @@ const Pricing = () => {
               </span>
               <span>Commercial use permission</span>
             </p>
-            <Button
-              className="py-2 px-9 bg-gradient-to-tl  from-[#0CE47F] to-[#01904D] text-white font-medium rounded-full cursor-pointer"
-              label="Purchase Now"
-              icon={<BiSolidPurchaseTag />}
-              iconPosition="left"
-            />
+            <div className="flex justify-center">
+              <Button
+                className="py-2 px-9 bg-gradient-to-tl  from-[#0CE47F] to-[#01904D] text-white font-medium rounded-full cursor-pointer"
+                label="Purchase Now"
+                icon={<BiSolidPurchaseTag />}
+                iconPosition="left"
+              />
+            </div>
           </div>
         </div>
         {/* card 2 */}
@@ -146,11 +148,11 @@ const Pricing = () => {
               <span className="text-white">Live Message</span>
             </p>
 
-            <div className=" rounded-full bg-white w-fit h-fit mt-7">
+            <div className="flex justify-center bg-white w-fit h-fit mx-auto rounded-full">
               <Button
-                className="py-2 px-9 text-transparent bg-clip-text  bg-gradient-to-br from-[#01904D] to-[#0CE47F] font-medium  cursor-pointer "
+                className="py-2 px-9  text-transparent bg-clip-text bg-gradient-to-tl from-[#0CE47F] to-[#01904D] font-medium rounded-full cursor-pointer  "
                 label="Purchase Now"
-                icon={<BiSolidPurchaseTag className="text-green-600" />}
+                icon={<BiSolidPurchaseTag fill="#0CE47F" />}
                 iconPosition="left"
               />
             </div>

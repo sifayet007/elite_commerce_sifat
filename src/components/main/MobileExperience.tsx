@@ -5,7 +5,7 @@ import React from "react";
 
 const MobileExperience = () => {
   return (
-    <div className=" my-[clamp(20px,2.5vw,40px)]">
+    <div className=" mt-[clamp(30px,5vw,80px)]">
       <div className="text-center ">
         <h4
           className=" text-[clamp(10px,2.5vw,16px)] text-center w-[clamp(100px,25vw,200px)] mx-auto py-2 rounded-l-full text-white"

@@ -8,7 +8,7 @@ const FeatureOfElideCommerce = () => {
   const [activeIndex, setActiveIndex] =
     React.useState<string>("customer-panel");
   return (
-    <div className="mt-24">
+    <div className="mt-[clamp(35px,8vw,96px)]">
       <div className="text-center">
         <h1 className="text-[clamp(16px,2.5vw,30px)] font-semibold">
           Solution-wise Features of{" "}

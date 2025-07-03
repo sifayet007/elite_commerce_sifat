@@ -6,17 +6,8 @@ import React from "react";
 
 const TechnologyGetaway = () => {
   return (
-    <div className=" md:mt-10 mt-5">
-      <h1
-        className="text-[clamp(10px,2.5vw,16px)] md:px-3 px-2 text-center bg-no-repeat bg-center bg-cover w-[clamp(120px,25vw,200px)] mx-auto py-2 rounded-l-full text-white"
-        style={{ backgroundImage: `url(${assets.technologyTextBg.src})` }}
-      >
-        Technology Getaway
-      </h1>
-      <p className="text-[clamp(16px,2.5vw,30px)] text-center">
-        Elite Commerce Scripts For{" "}
-        <span className="text-green-600"> Cross-Platform</span> Excellence
-      </p>
+    <div className="mt-[clamp(20px,5vw,80px)]">
+      div
       <div className="mt-10">
         <h1></h1>
       </div>

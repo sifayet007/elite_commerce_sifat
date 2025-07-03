@@ -7,8 +7,8 @@ import React from "react";
 const DasktopMobileOptimized = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   return (
-    <div>
-      <div className="text-center">
+    <div className="mt-[clamp(35px,5vw,80px)]">
+      <div className="text-center space-y-[clamp(10px,2.5vw,20px)]">
         <h1
           className="text-[clamp(10px,2.5vw,16px)] text-white bg-no-repeat bg-center bg-cover  w-[250px] md:w-[300px] px-3 md:py-3 py-2  mx-auto  rounded-l-full"
           style={{
@@ -17,12 +17,12 @@ const DasktopMobileOptimized = () => {
         >
           Desktop Mobile Optimized
         </h1>
-        <p className="text-[clamp(20px,2.5vw,40px)] font-bold">
+        <p className="text-[clamp(18px,2.5vw,40px)] font-bold">
           Furthermore, The Elite Commerce is <br /> Mobile-friendly{" "}
           <span className="text-green-500">Design</span>
         </p>
       </div>
-      <div className="flex md:flex-row flex-col gap-y-5 lg:gap-x-5 items-center  md:bg-gradient-to-tl md:from-[#0CE47F]/5 md:to-[#01904D]/5  md:py-10 md:px-7 ">
+      <div className="flex md:flex-row flex-col gap-y-5 lg:gap-x-5 items-center  md:bg-gradient-to-tl md:from-[#0CE47F]/5 md:to-[#01904D]/5  md:py-10 md:px-7 mt-[clamp(20px,2.5vw,40px)]">
         <div className="w-full max-h-[504px] overflow-auto flex flex-row md:flex-col p-5 gap-x-4 gap-y-5">
           {desktopMobileData?.map((item, index) => (
             <div

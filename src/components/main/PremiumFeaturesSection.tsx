@@ -21,7 +21,7 @@ const PremiumFeaturesSection = () => {
             <span className="text-green-500"> Premium Features.</span>
           </p>
         </div>
-        <div>
+        <div className="md:mt-0 mt-5">
           <p className="capitalize text-[clamp(12px,2.5vw,20px)] ">
             Enjoy the exclusive features that make <br /> building your web
             pages a joyful moment. <br />
