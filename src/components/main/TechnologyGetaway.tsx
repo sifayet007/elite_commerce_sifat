@@ -7,7 +7,6 @@ import React from "react";
 const TechnologyGetaway = () => {
   return (
     <div className="mt-[clamp(20px,5vw,80px)]">
-      div
       <div className="mt-10">
         <h1></h1>
       </div>
