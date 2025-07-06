@@ -4,8 +4,8 @@ import VideoPlayer from "../ui/VideoPlayer";
 
 const InnovativeSolutionsSection = () => {
   return (
-    <div className="text-center  p-5 uppercase">
-      <h1 className="text-[clamp(16px,2.5vw,50px)] font-bold">
+    <div className="text-center p-5 bg-[linear-gradient(to_right,#FFE5E5_1px,transparent_1px),linear-gradient(to_bottom,#FFE5E5_1px,transparent_1px)] bg-[size:150px_150px]">
+      <h1 className="text-[clamp(16px,2.5vw,50px)] font-bold uppercase">
         Innovative Solutions for Your <br /> E-Commerce{" "}
         <span className="text-green-600">Success.</span>
       </h1>

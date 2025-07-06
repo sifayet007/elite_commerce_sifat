@@ -8,7 +8,7 @@ import { FaLocationPin, FaStar } from "react-icons/fa6";
 const TestimonialSlider = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
-  const total = testimonials.length;
+  const total = testimonials?.length;
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,7 +28,7 @@ const TestimonialSlider = () => {
   };
 
   useEffect(() => {
-    if (testimonials.length === 0) return;
+    if (testimonials?.length === 0) return;
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     }, 4000);
@@ -55,7 +55,7 @@ const TestimonialSlider = () => {
       {/* Avatar Slider Row (Responsive + Scrollable) */}
       <div className="flex items-center gap-2 sm:gap-4 py-6 overflow-x-auto scrollbar-none">
         <div className="flex items-center gap-2 sm:gap-4 mx-auto px-2 min-w-fit">
-          {visibleAvatars.map((item, i) => {
+          {visibleAvatars.map((item, i: number) => {
             const distance = Math.abs(item.relativeIndex);
 
             let sizeClass = "";

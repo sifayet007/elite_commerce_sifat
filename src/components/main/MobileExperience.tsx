@@ -1,5 +1,6 @@
 import { assets } from "@/assets";
 import mobileExp from "@/constants/mobile-experience";
+import { IMobileType } from "@/interfaces/mobile-experience.interfaces";
 import Image from "next/image";
 import React from "react";
 
@@ -25,7 +26,7 @@ const MobileExperience = () => {
         </h1>
       </div>
       <div className="flex overflow-auto  flex-row gap-x-5 md:gap-x-5">
-        {mobileExp?.map((item, index) => (
+        {mobileExp?.map((item: IMobileType, index: number) => (
           <div key={index}>
             <Image
               src={item.image}

@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div>
       {/* <LightGreenShadow /> */}
-      <div className="max-w-7xl w-full mx-auto pt-24 px-[clamp(20px,2.5vw,40px)] ">
+      <div className="max-w-7xl w-full mx-auto pt-[clamp(45px,5vw,96px)] px-[clamp(20px,2.5vw,40px)] ">
         <InnovativeSolutionsSection />
         <PremiumFeaturesSection />
         <OurFeature />
