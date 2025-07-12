@@ -44,7 +44,7 @@ const CustomerPanel = () => {
         </div>
 
         {/* Right Feature Boxes */}
-        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-x-12 bg-gradient-to-tl from-[#0CE47F]/10 to-[#01904D]/10 rounded-xl py-8 px-4 md:px-12">
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-x-[clamp(20px,5vw,48px)] bg-gradient-to-tl from-[#0CE47F]/10 to-[#01904D]/10 rounded-xl py-8 px-[clamp(20px,5vw,48px)]">
           {[1, 2].map((_, i) => {
             const data =
               i === 0
@@ -62,10 +62,10 @@ const CustomerPanel = () => {
             return (
               <div
                 key={i}
-                className={`bg-white relative p-4 sm:p-5 overflow-hidden rounded-xl w-full max-w-[350px] ${
+                className={`bg-white relative p-4 sm:p-5 overflow-hidden rounded-xl w-full max-w-[380px] max-h-[400px] ${
                   i === 0
-                    ? "transform -translate-y-3"
-                    : "transform translate-y-3"
+                    ? "transform -translate-y-6"
+                    : "transform translate-y-6"
                 }`}
               >
                 {/* Shadow circles */}
@@ -73,7 +73,7 @@ const CustomerPanel = () => {
                 <div className="h-20 w-20 absolute rounded-full bg-gradient-to-tl from-[#FF9153] shadow-[0_20px_50px_#FF9153] top-0 right-0 transform translate-x-1/2 -translate-y-1/2" />
 
                 {/* Image */}
-                <div className="w-full max-w-[300px] mx-auto">
+                <div className="w-full max-w-[300px] max-h-[260px] mx-auto">
                   <Image
                     src={data}
                     alt="feature image"
@@ -81,7 +81,7 @@ const CustomerPanel = () => {
                     width={0}
                     height={0}
                     priority
-                    className="w-full h-auto relative z-10 aspect-auto object-cover"
+                    className="w-full h-auto relative z-10 aspect-[3/2]  object-cover"
                   />
                 </div>
 
