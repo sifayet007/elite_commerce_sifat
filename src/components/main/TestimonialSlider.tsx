@@ -31,7 +31,7 @@ const TestimonialSlider = () => {
     if (testimonials?.length === 0) return;
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
