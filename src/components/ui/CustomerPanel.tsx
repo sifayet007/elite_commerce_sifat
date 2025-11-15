@@ -2,6 +2,8 @@ import customerFeatures from "@/constants/elid-commerce-feature";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import Button from "./Button";
+import { AnimatePresence, motion } from "framer-motion";
+
 
 const CustomerPanel = () => {
   const [activeIndex, setActiveIndex] = React.useState<number>(0);
@@ -15,14 +17,25 @@ const CustomerPanel = () => {
     };
   }, [customerFeatures.length]);
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: -20, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: 20, scale: 0.8 }}
+      transition={{ duration: 0.4 }}
+    >
       <div className=" flex flex-col md:flex-row gap-y-5 md:gap-x-5">
         {/* Left Button List */}
         <div className="md:bg-gradient-to-tl from-[#0CE47F]/10 md:block to-[#01904D]/10 rounded-xl md:flex-1 w-full">
           <h1 className="bg-clip-text text-transparent bg-gradient-to-tl font-semibold from-[#0CE47F] to-[#01904D] md:pl-4 md:mb-0 mb-3 md:pt-4 text-lg md:text-xl md:text-left text-center">
             All Feature
           </h1>
-          <div className=" md:p-8 space-y-3.5 flex md:flex-col flex-row overflow-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:space-x-0 space-x-3.5">
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+
+            transition={{ duration: 0.35, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: false }}
+            className=" md:p-8 space-y-3.5 flex md:flex-col flex-row overflow-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:space-x-0 space-x-3.5">
             {customerFeatures?.map((item, index) => {
               const IconComponent = item.icon;
               return (
@@ -40,11 +53,19 @@ const CustomerPanel = () => {
                 />
               );
             })}
-          </div>
+          </motion.div>
         </div>
 
         {/* Right Feature Boxes */}
-        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-x-[clamp(20px,5vw,48px)] bg-gradient-to-tl from-[#0CE47F]/10 to-[#01904D]/10 rounded-xl py-8 px-[clamp(20px,5vw,48px)]">
+
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+
+          transition={{ duration: 0.35, ease: "easeOut", delay: 0.4 }}
+          viewport={{ once: false }}
+          className="flex flex-col md:flex-row items-center gap-6 md:gap-x-[clamp(20px,5vw,48px)] bg-gradient-to-tl from-[#0CE47F]/10 to-[#01904D]/10 rounded-xl py-8 px-[clamp(20px,5vw,48px)]">
+          <AnimatePresence mode="wait">
           {[1, 2].map((_, i) => {
             const data =
               i === 0
@@ -60,8 +81,17 @@ const CustomerPanel = () => {
                 : customerFeatures[activeIndex].description2;
 
             return (
-              <div
-                key={i}
+
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+
+
+
+                key={`${activeIndex}-${i}`}
+
                 className={`bg-white relative p-4 sm:p-5 overflow-hidden rounded-xl w-full max-w-[380px] max-h-[400px] ${
                   i === 0
                     ? "transform -translate-y-6"
@@ -95,12 +125,15 @@ const CustomerPanel = () => {
                 <p className="text-xs md:text-sm text-gray-700 mt-1 line-clamp-2">
                   {desc}
                 </p>
-              </div>
+              </motion.div>
+
             );
           })}
-        </div>
+          </AnimatePresence>
+        </motion.div>
+
       </div>
-    </div>
+    </motion.div >
   );
 };
 

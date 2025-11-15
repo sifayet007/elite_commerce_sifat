@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import customerFeatures from "@/constants/elid-commerce-feature";
 import Button from "./Button";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion"; motion
 
 const AdminPanel = () => {
   const [activeIndex, setActiveIndex] = React.useState<number>(0);
@@ -15,7 +16,14 @@ const AdminPanel = () => {
     };
   }, [customerFeatures.length]);
   return (
-    <div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.35, ease: "easeOut", delay: 0.2 }}
+      viewport={{ once: false }}
+    >
+
       <div className=" flex flex-col md:flex-row gap-y-5 md:gap-x-5">
         {/* Left Button List */}
         <div className="md:bg-gradient-to-tl from-[#0CE47F]/10 md:block to-[#01904D]/10 rounded-xl md:flex-1 w-full">
@@ -44,7 +52,14 @@ const AdminPanel = () => {
         </div>
 
         {/* Right Feature Boxes */}
-        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-x-12 bg-gradient-to-tl from-[#0CE47F]/10 to-[#01904D]/10 rounded-xl py-8 px-4 md:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+
+          transition={{ duration: 0.35, ease: "easeOut", delay: 0.4 }}
+          viewport={{ once: false }}
+          className="flex flex-col md:flex-row items-center gap-6 md:gap-x-12 bg-gradient-to-tl from-[#0CE47F]/10 to-[#01904D]/10 rounded-xl py-8 px-4 md:px-12">
+          <AnimatePresence mode="wait">
           {[1, 2].map((_, i) => {
             const data =
               i === 0
@@ -60,8 +75,12 @@ const AdminPanel = () => {
                 : customerFeatures[activeIndex].description2;
 
             return (
-              <div
-                key={i}
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                key={`${activeIndex}-${i}`}
                 className={`bg-white relative p-4 sm:p-5 overflow-hidden rounded-xl w-full max-w-[350px] ${
                   i === 0
                     ? "transform -translate-y-3"
@@ -95,12 +114,13 @@ const AdminPanel = () => {
                 <p className="text-xs md:text-sm text-gray-700 mt-1 line-clamp-2">
                   {desc}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
+          </AnimatePresence>
+        </motion.div>
         </div>
-      </div>
-    </div>
+    </motion.div> 
   );
 };
 

@@ -3,6 +3,8 @@ import React, { act } from "react";
 import Button from "../ui/Button";
 import CustomerPanel from "../ui/CustomerPanel";
 import AdminPanel from "../ui/AdminPanel";
+import { AnimatePresence, motion, scale } from "framer-motion";
+
 
 const FeatureOfElideCommerce = () => {
   const [activeIndex, setActiveIndex] =
@@ -10,15 +12,43 @@ const FeatureOfElideCommerce = () => {
   return (
     <div className="mt-[clamp(35px,8vw,96px)]">
       <div className="text-center">
-        <h1 className="text-[clamp(16px,2.5vw,30px)] font-semibold">
+        <motion.h1
+          initial={{
+            scale: 0, transformOrigin: "left  center",
+          }}
+          whileInView={{
+            scale: 1,
+          }}
+          transition={{
+            duration: 1
+          }}
+          viewport={{
+            once: false
+          }}
+
+          className="text-[clamp(16px,2.5vw,30px)] font-semibold">
           Solution-wise Features of{" "}
           <span className="text-green-600">Elite Commerce</span>
-        </h1>
-        <p className="md:text-sm lg:text-base text-xs">
+        </motion.h1>
+        <motion.p
+          initial={{
+            scale: 0, transformOrigin: "right  center",
+          }}
+          whileInView={{
+            scale: 1,
+          }}
+          transition={{
+            duration: 1
+          }}
+          viewport={{
+            once: false
+          }}
+          className="md:text-sm lg:text-base text-xs">
           Meet the dynamic features of{" "}
           <span className="text-green-600">Elite Commerce</span> that comes with
           Customer Panel, admin panel, and other solutions.
-        </p>
+        </motion.p>
+
         <div className="flex gap-x-5 justify-center">
           <div className="relative inline-block group mt-[30px]">
             <div
@@ -48,10 +78,19 @@ const FeatureOfElideCommerce = () => {
           </div>
         </div>
       </div>
-      <div className="mt-10">
-        {activeIndex === "customer-panel" && <CustomerPanel />}
-        {activeIndex === "admin-panel" && <AdminPanel />}
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeIndex}
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -20, scale: 0.95 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          className="mt-10"
+        >
+          {activeIndex === "customer-panel" && <CustomerPanel />}
+          {activeIndex === "admin-panel" && <AdminPanel />}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

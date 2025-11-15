@@ -2,7 +2,7 @@ import DasktopMobileOptimized from "@/components/main/DasktopMobileOptimized";
 import FeatureOfElideCommerce from "@/components/main/FeatureOfElideCommerce";
 import Footer from "@/components/main/Footer";
 import GetHelp from "@/components/main/GetHelp";
-import InnovativeSolutionsSection from "@/components/main/InnovativeSolutionsSection";
+import Hero from "@/components/main/Hero";
 import Marquee from "@/components/main/Marquee";
 import MobileExperience from "@/components/main/MobileExperience";
 import OurFeature from "@/components/main/OurFeature";
@@ -21,7 +21,7 @@ export default function Home() {
     <div>
       {/* <LightGreenShadow /> */}
       <div className="max-w-7xl w-full mx-auto pt-[clamp(45px,5vw,96px)] px-[clamp(20px,2.5vw,40px)] ">
-        <InnovativeSolutionsSection />
+        <Hero />
         <PremiumFeaturesSection />
         <OurFeature />
         <FeatureOfElideCommerce />

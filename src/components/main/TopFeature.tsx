@@ -3,6 +3,8 @@ import topFeatureCards from "@/constants/top-feature";
 import Image from "next/image";
 import { assets } from "@/assets";
 import Button from "../ui/Button";
+import { motion } from "framer-motion";
+
 
 const TopFeature = () => {
   return (

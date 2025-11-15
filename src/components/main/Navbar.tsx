@@ -60,7 +60,7 @@ const Navbar = () => {
             iconPosition="right"
           />
           <Button
-            className="py-2 px-[clamp(14px,10vw,18px)] text-[clamp(12px,2.5vw,16px)] cursor-pointer outline-1 outline-gray-200 rounded-full bg-gradient-to-br from-[#01904D] text-white   to-[#0CE47F]"
+            className="py-2 px-[clamp(14px,10vw,18px)]  bg-gradient-to-r hover:from-red-500 hover:to-orange-400 from-[#0CE47F] to-[#01904D] duration-300 transform transition-colors  text-white text-[clamp(12px,2.5vw,16px)] cursor-pointer outline-1 outline-gray-200 rounded-full   "
             label="Purchase"
             type="button"
             icon={<SiEnvato />}

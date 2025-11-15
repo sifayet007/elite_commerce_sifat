@@ -12,3 +12,9 @@
 /* .left-to-right {
   animation: marqueeLeftToRight 30s linear infinite;
 } */
+body{
+  box-sizing: 0;
+  margin: 0;
+  padding: 0;
+  ;
+}

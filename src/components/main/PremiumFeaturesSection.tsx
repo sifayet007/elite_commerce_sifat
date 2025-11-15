@@ -1,45 +1,87 @@
+"use client";
+
 import { assets } from "@/assets";
-import Image from "next/image";
-import React from "react";
-import { PiStarFourFill } from "react-icons/pi";
-import Button from "../ui/Button";
 import TextCircleAndSpin from "../ui/TextCircelAndSpin";
+import { PiStarFourFill } from "react-icons/pi";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import FeatureCard from "../card/FeatureCard";
 
 const PremiumFeaturesSection = () => {
+  const sectionRef = useRef(null);
+
+  // Scroll Animation: scroll Y based motion values
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "start end"],
+  });
+
+
+  const xLeft = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const xRight = useTransform(scrollYProgress, [0, 1], [0, 200]);
+
   return (
-    <div className=" space-y-5" id="#demo">
-      <div className="md:flex justify-between items-center ">
-        <div>
+    <motion.div className="space-y-5 mt-[500px]" id="demo">
+
+      {/* Header Section */}
+      <div ref={sectionRef} className="md:flex justify-between items-center">
+
+        {/* LEFT TEXT */}
+        <motion.div
+          style={{ x: xLeft }}
+          transition={{
+            type: "spring",
+            stiffness: 60,
+            damping: 15,
+          }}
+        >
           <h1 className="text-orange-500 font-semibold flex items-center gap-2">
-            <span>
-              <PiStarFourFill />
-            </span>
-            Why Choose Elite Commerce ?
+            <PiStarFourFill />
+            Why Choose Elite Commerce?
           </h1>
+
           <p className="text-[clamp(18px,2.5vw,32px)] font-bold">
-            Stand Out From The Crowd <br /> With
-            <span className="text-green-500"> Premium Features.</span>
+            Stand Out From The Crowd <br />
+            With <span className="text-green-500">Premium Features.</span>
           </p>
-        </div>
-        <div className="md:mt-0 mt-5">
-          <p className="capitalize text-[clamp(12px,2.5vw,20px)] ">
-            Enjoy the exclusive features that make <br /> building your web
-            pages a joyful moment. <br />
+        </motion.div>
+
+        {/* RIGHT TEXT */}
+        <motion.div
+          style={{ x: xRight }}
+          transition={{
+            type: "spring",
+            stiffness: 60,
+            damping: 15,
+          }}
+          className="md:mt-0 mt-5"
+        >
+          <p className="capitalize text-[clamp(12px,2.5vw,20px)]">
+            Enjoy the exclusive features that make your web page building joyful.
+            <br className="md:flex hidden" />
             All in one theme!
           </p>
-        </div>
+        </motion.div>
       </div>
-      {/* card section  */}
+
+      {/* Card section */}
       <div className="md:flex gap-x-5 md:space-y-0 space-y-5">
-        <div className="flex md:flex-col justify-between items-center bg-gradient-to-tr from-orange-200 to-[#57feb0]   via-white to-100% from-0%  p-5">
+
+        {/* First Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="flex md:flex-col justify-between items-center bg-gradient-to-tr from-orange-200 to-[#57feb0] via-white p-5"
+        >
           <div>
             <h1 className="text-[clamp(22px,2.5vw,50px)] font-bold text-orange-500">
               Explore
             </h1>
-            <p className="text-[clamp(14px,2.5vw,30px)]">
-              Our High-Quality Dmos
-            </p>
+            <p className="text-[clamp(14px,2.5vw,30px)]">Our High-Quality Demos</p>
           </div>
+
           <TextCircleAndSpin
             text="Elite Commerce - expert squad"
             logoSrc={assets.expertSquteLogo.src}
@@ -52,52 +94,13 @@ const PremiumFeaturesSection = () => {
             letterSpacing="2px"
             fontColor="#ffffff"
           />
-        </div>
-        <div className="outline-2 outline-[#E6E6E6] p-5 rounded-md flex-1/2">
-          <div className="flex gap-2">
-            <div className="w-4 h-4 rounded-full bg-[#D9D9D9]"></div>
-            <div className="w-4 h-4 rounded-full bg-[#D9D9D9]"></div>
-            <div className="w-4 h-4 rounded-full bg-[#D9D9D9]"></div>
-          </div>
-          <div className="py-[14px]">
-            <Image
-              className="w-full"
-              src={assets.premiumCardImg1}
-              alt="premium Card image 1"
-            />
-          </div>
-          <div className="flex justify-between items-center">
-            <h1>Elite Commerce</h1>
-            <Button
-              label="Customer Panel"
-              className="md:py-2 lg:px-3.5  py-1 px-2.5 whitespace-nowrap  lg:text-base md:text-sm rounded-full outline-2 outline-[#E6E6E6] cursor-pointer"
-            />
-          </div>
-        </div>
-        <div className="outline-2 outline-[#E6E6E6] p-5 rounded-md flex-1/2">
-          <div className="flex gap-2">
-            <div className="w-4 h-4 rounded-full bg-[#D9D9D9]"></div>
-            <div className="w-4 h-4 rounded-full bg-[#D9D9D9]"></div>
-            <div className="w-4 h-4 rounded-full bg-[#D9D9D9]"></div>
-          </div>
-          <div className="py-[14px]">
-            <Image
-              className="w-full"
-              src={assets.premiumCardImg1}
-              alt="premium Card image 1"
-            />
-          </div>
-          <div className="flex justify-between items-center">
-            <h1>Elite Commerce</h1>
-            <Button
-              label="Admin Panel"
-              className="md:py-2 lg:px-3.5  py-1 px-2.5 whitespace-nowrap  lg:text-base md:text-sm rounded-full outline-2 outline-[#E6E6E6] cursor-pointer"
-            />
-          </div>
-        </div>
+        </motion.div>
+
+        {/* Right Side Cards */}
+        <FeatureCard delay={0.5} image={assets.premiumCardImg1} label="Customer Panel" />
+        <FeatureCard delay={0.8} image={assets.premiumCardImg1} label="Admin Panel" />
       </div>
-      {/* text spnin */}
-    </div>
+    </motion.div>
   );
 };
 

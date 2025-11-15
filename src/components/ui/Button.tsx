@@ -1,7 +1,10 @@
+"use client"
 import { IButton } from "@/interfaces/button";
+import { motion } from "framer-motion";
 import React from "react";
 
 const Button = ({
+
   label,
   onClick,
   className,
@@ -12,9 +15,12 @@ const Button = ({
   style,
 }: IButton) => {
   return (
-    <button
+    <motion.button
+
+      whileTap={{ scale: 0.95 }}
+
       onClick={onClick}
-      className={`inline-flex items-center ${className}`} // 👈 flex for icon + text layout
+      className={`inline-flex items-center ${className}`} 
       disabled={disabled}
       type={type}
       style={style}
@@ -22,7 +28,7 @@ const Button = ({
       {iconPosition === "left" && icon && <span className="mr-2">{icon}</span>}
       <span>{label}</span>
       {iconPosition === "right" && icon && <span className="ml-2">{icon}</span>}
-    </button>
+    </motion.button>
   );
 };
 

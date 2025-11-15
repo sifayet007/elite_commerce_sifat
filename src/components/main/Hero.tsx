@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import React from "react";
 import Button from "../ui/Button";
 import VideoPlayer from "../ui/VideoPlayer";
 import { motion } from "framer-motion";
 
-const InnovativeSolutionsSection = () => {
+const Hero = () => {
   return (
     <motion.section
       className="
@@ -15,23 +15,41 @@ const InnovativeSolutionsSection = () => {
       "
     >
       {/* Heading */}
-      <h1 className="text-[clamp(16px,2.5vw,50px)] font-bold uppercase">
+      <motion.h1
+        initial={{ opacity: 0, y: 75 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="text-[clamp(16px,2.5vw,50px)] font-bold uppercase"
+      >
         Innovative Solutions for Your <br />
         E-Commerce{" "}
         <span className="text-green-600">Success.</span>
-      </h1>
+      </motion.h1>
 
       {/* Description */}
-      <p className="text-[clamp(9px,1.5vw,18px)] text-gray-500 mt-4 font-semibold capitalize">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.1 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="text-[clamp(9px,1.5vw,18px)] text-gray-500 mt-4 font-semibold capitalize"
+      >
         The best <span className="text-orange-500">E-Commerce</span> marketplace
         solution, You can operate and{" "}
         <span className="text-green-500">control</span>
         <br /> your businesses in every place with{" "}
         <span className="text-red-500">Elite Commerce.</span>
-      </p>
+      </motion.p>
 
       {/* CTA Button */}
-      <div className="relative inline-block group mt-[clamp(16px,2.5vw,32px)]">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="relative inline-block group mt-[clamp(16px,2.5vw,32px)]"
+      >
         <div
           className="
             absolute w-full h-full rounded-[6px] shadow-md duration-300
@@ -44,11 +62,11 @@ const InnovativeSolutionsSection = () => {
           label="Buy Now $99"
           className="
             relative z-10 px-6 py-2 text-white text-[clamp(12px,2.5vw,16px)] 
-            font-semibold bg-gradient-to-r from-red-500 to-orange-400 
+            font-semibold hover:scale-3d bg-gradient-to-r from-red-500 to-orange-400 
             rounded-[6px] shadow-lg
           "
         />
-      </div>
+      </motion.div>
 
       {/* Video Section */}
       <div className="flex justify-center mt-[clamp(20px,2.5vw,40px)] w-full md:p-[60px]">
@@ -58,4 +76,4 @@ const InnovativeSolutionsSection = () => {
   );
 };
 
-export default InnovativeSolutionsSection;
+export default Hero;
