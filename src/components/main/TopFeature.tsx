@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import topFeatureCards from "@/constants/top-feature";
 import Image from "next/image";
@@ -18,10 +19,32 @@ const TopFeature = () => {
           />
         </div>
 
-        <h1 className="text-[18px,2.5vw,30px] font-bold hidden lg:block ">
+        <motion.h1
+          whileDrag={{
+            scale: 3
+          }}
+          className="text-[18px,2.5vw,30px] font-bold hidden lg:block ">
           Your All-in-One <span className="text-[#119F5B]">eCommerce</span>{" "}
           Solution
-        </h1>
+        </motion.h1>
+        <motion.div
+          drag
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          whileDrag={{ scale: 1.15, rotate: 3 }}
+          className="w-32 h-32 bg-red-500 rounded-lg"
+        >
+          Move me
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          Clean Blur Reveal
+        </motion.div>
+
         <h1 className="text-[18px,2.5vw,30px] font-bold lg:hidden">
           Product Design Online feature will help your{" "}
           <span className="text-[#119F5B]">Customer easy</span> customize and
