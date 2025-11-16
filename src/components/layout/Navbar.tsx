@@ -9,6 +9,8 @@ import { GoArrowUpRight } from "react-icons/go";
 import { SiEnvato } from "react-icons/si";
 import { BiMenu } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
+import { AnimatePresence, motion } from "framer-motion";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -40,13 +42,15 @@ const Navbar = () => {
             {navbar?.map(
               (item: { href: string; label: string }, index: number) => (
                 <Link
+                  key={index}
                   href={item.href}
                   // onClick={handleClick}
-                  key={index}
+
                   className="text-[clamp(14px,2.5vw,16px)]"
                 >
                   {item.label}
                 </Link>
+
               )
             )}
           </div>
